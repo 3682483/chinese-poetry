@@ -17,7 +17,7 @@ def check_json(f, _dir):
     if not f.endswith('.json'):
         return True
 
-    with open(filepath) as file:
+    with open(filepath, encoding='utf-8') as file:
         try:
             _ = json.loads(file.read())
             sys.stdout.write(f"{filepath} 校验成功")

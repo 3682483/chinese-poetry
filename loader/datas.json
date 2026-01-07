@@ -38,7 +38,7 @@
             "name": "宋词",
             "id": 5,
             "path": "宋词/",
-            "excludes": ["authors.song.json", "ci.db", "main.py", "README.md", "UpdateCi.py"],
+            "excludes": ["author.song.json", "ci.db", "main.py", "README.md", "UpdateCi.py"],
             "tag": "paragraphs"
         },
         "youmengying": {
@@ -89,6 +89,96 @@
             "id": 13,
             "path": "诗经/shijing.json",
             "tag": "content"
+        },
+        "dizigui": {
+            "name": "蒙学-弟子规",
+            "id": 14,
+            "path": "蒙学/dizigui.json",
+            "tag": "content"
+        },
+        "qianziwen": {
+            "name": "蒙学-千字文",
+            "id": 15,
+            "path": "蒙学/qianziwen.json",
+            "tag": "paragraphs"
+        },
+        "baijiaxing": {
+            "name": "蒙学-百家姓",
+            "id": 16,
+            "path": "蒙学/baijiaxing.json",
+            "tag": "paragraphs"
+        },
+        "sanzijing-new": {
+            "name": "蒙学-三字经(新)",
+            "id": 17,
+            "path": "蒙学/sanzijing-new.json",
+            "tag": "paragraphs"
+        },
+        "sanzijing-trad": {
+            "name": "蒙学-三字经(繁)",
+            "id": 18,
+            "path": "蒙学/sanzijing-traditional.json",
+            "tag": "paragraphs"
+        },
+        "zhuzijiaxun": {
+            "name": "蒙学-朱子家训",
+            "id": 19,
+            "path": "蒙学/zhuzijiaxun.json",
+            "tag": "paragraphs"
+        },
+        "guwenguanzhi": {
+            "name": "蒙学-古文观止",
+            "id": 20,
+            "path": "蒙学/guwenguanzhi.json",
+            "tag": "content"
+        },
+        "qianjiashi": {
+            "name": "蒙学-千家诗",
+            "id": 21,
+            "path": "蒙学/qianjiashi.json",
+            "tag": "content"
+        },
+        "shenglvqimeng": {
+            "name": "蒙学-声律启蒙",
+            "id": 22,
+            "path": "蒙学/shenglvqimeng.json",
+            "tag": "content"
+        },
+        "tangshisanbaishou": {
+            "name": "蒙学-唐诗三百首",
+            "id": 23,
+            "path": "蒙学/tangshisanbaishou.json",
+            "tag": "content"
+        },
+        "wenzimengqiu": {
+            "name": "蒙学-文字蒙求",
+            "id": 24,
+            "path": "蒙学/wenzimengqiu.json",
+            "tag": "content"
+        },
+        "youxueqionglin": {
+            "name": "蒙学-幼学琼林",
+            "id": 25,
+            "path": "蒙学/youxueqionglin.json",
+            "tag": "content"
+        },
+        "zengguangxianwen": {
+            "name": "蒙学-增广贤文",
+            "id": 26,
+            "path": "蒙学/zengguangxianwen.json",
+            "tag": "content"
+        },
+        "daxue": {
+            "name": "四书五经-大学",
+            "id": 27,
+            "path": "四书五经/daxue.json",
+            "tag": "paragraphs"
+        },
+        "zhongyong": {
+            "name": "四书五经-中庸",
+            "id": 28,
+            "path": "四书五经/zhongyong.json",
+            "tag": "paragraphs"
         }
     }
 }

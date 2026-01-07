@@ -24,22 +24,65 @@ class PlainDataLoader():
         tag = configs["tag"]
         body = []  # may get a bit huge... 
         full_path = os.path.join(self.top_level_path, configs["path"])
+        
+        def extract_from_file(filepath):
+            local_body = []
+            try:
+                with open(filepath, mode='r', encoding='utf-8') as file:
+                    data = json.load(file)
+                    for poem in data:
+                        if tag in poem:
+                            local_body += poem[tag]
+            except Exception as e:
+                print(f"Error reading {filepath}: {e}")
+            return local_body
+
         if os.path.isfile(full_path):  # single file json
-            with open(full_path, mode='r', encoding='utf-8') as file:
-                data = json.load(file)
-                for poem in data:
-                    body += poem[tag]
-            return body
+            return extract_from_file(full_path)
+        
         # a dir, probably with a skip list
         subpaths = os.listdir(full_path)
         for filename in subpaths:
-            if filename in configs["excludes"]:
+            if filename in configs.get("excludes", []):
                 continue
-            with open(os.path.join(full_path, filename), mode='r', encoding='utf-8') as file:
-                data = json.load(file)
-                for poem in data:
-                    body += poem[tag]
+            body += extract_from_file(os.path.join(full_path, filename))
         return body
+
+    def get_poems(self, target: str) -> list:
+        """获取完整的诗词对象列表，包含标题、作者等信息"""
+        if target not in self.datasets:
+            print(f"{target} is not included in datas.json as a dataset")
+            return []
+        configs = self.datasets[target]
+        poems = []
+        full_path = os.path.join(self.top_level_path, configs["path"])
+        
+        def load_file(filepath):
+            local_poems = []
+            try:
+                with open(filepath, mode='r', encoding='utf-8') as file:
+                    data = json.load(file)
+                    # 确保是列表
+                    if isinstance(data, list):
+                        local_poems.extend(data)
+                    elif isinstance(data, dict):
+                        local_poems.append(data)
+            except Exception as e:
+                print(f"Error reading {filepath}: {e}")
+            return local_poems
+
+        if os.path.isfile(full_path):
+            return load_file(full_path)
+        
+        if not os.path.isdir(full_path):
+            return []
+
+        subpaths = os.listdir(full_path)
+        for filename in subpaths:
+            if filename in configs.get("excludes", []):
+                continue
+            poems.extend(load_file(os.path.join(full_path, filename)))
+        return poems
 
     def extract_from_multiple(self, targets: list) -> list:
         results = []
