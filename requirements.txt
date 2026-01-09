@@ -1,1 +1,5 @@
 pytest==5.3.2
+streamlit
+opencc
+openai
+python-dotenv

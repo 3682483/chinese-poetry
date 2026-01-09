@@ -31,8 +31,7 @@
             "name": "四书五经-孟子", 
             "id": 4,
             "path": "四书五经/mengzi.json",
-            "tag": "paragraphs",
-            "comments": "四书五经的其他文件不符合两层结构, 以后再想办法处理吧."
+            "tag": "paragraphs"
         },
         "songci": {
             "name": "宋词",
@@ -75,8 +74,7 @@
             "name": "纳兰性德",
             "id": 11,
             "path": "纳兰性德/纳兰性德诗集.json",
-            "tag": "para",
-            "comments": "蒙学文件夹下的非常规格式文件没有包括在这个json中"
+            "tag": "para"
         },
         "lunyu": {
             "name": "论语",
